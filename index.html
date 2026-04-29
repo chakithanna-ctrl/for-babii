@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For My Babi 💗</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffd6e0, #ffeef3);
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    button {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      background: #ff6f91;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    .letter {
+      display: none;
+      background: white;
+      padding: 25px;
+      margin-top: 20px;
+      border-radius: 15px;
+      max-width: 500px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    h2 {
+      color: #ff4d6d;
+    }
+
+    p {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: absolute;
+      color: #ff6f91;
+      animation: float 6s linear infinite;
+      font-size: 20px;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) scale(1); opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <button onclick="showLetter()">Open this, babi 💌</button>
+
+  <div class="letter" id="letter">
+    <h2>For My Babi 💖</h2>
+    <p>
+      I just want to take a moment to appreciate you and everything you are. Thank you for staying by my side, especially during the times when I wasn’t easy to handle. I know I’ve had moments where I pushed you away, but you still chose to understand me, and that means more than I can ever explain. You bring so much light into my life, babi. The way you care, your patience, your love, it all makes me feel safe and valued. I’m really grateful to have you, and I don’t ever want to take that for granted. You’re not just someone I love, you’re someone I cherish deeply. I appreciate all the little things you do, even the ones you think go unnoticed. They matter to me. You matter to me. More than anything, I’m thankful that I get to love you and call you mine. No matter what happens, I’ll always do my best to be someone who deserves you and someone who protects what we have. I love you so much, and I’m always here for you. I miss you so much babii
+    </p>
+  </div>
+</div>
+
+<script>
+  function showLetter() {
+    document.getElementById("letter").style.display = "block";
+  }
+
+  // Create floating hearts
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "💗";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 10 + 15 + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 6000);
+  }
+
+  setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
